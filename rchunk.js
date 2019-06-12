@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 
+const program = require('commander');
+
 const fs = require('fs');
 
 function rchunk(beg, end, rcontent, file) {
@@ -16,10 +18,25 @@ function rchunk(beg, end, rcontent, file) {
       if(!flag) 
         result += `${line}\n`;
     }
+    //console.log(line);
   });
   return result.replace('REPLACE_THIS_WITH', rcontent);
 }
 
-console.log(
-  rchunk(process.argv[2], process.argv[3], process.argv[4], process.argv[5])
-);
+program
+  .description('replaces a part of the code')
+  .option('-b, --beggining <beggining>', 'beggining of the regex')
+  .option('-e, --end <end>', 'end of the regex')
+  .option('-c, --content <content>', 'content to replace with')
+  .option('-f, --file <file>', 'file to change')
+  .action(async function(cmd) {
+    if(!cmd['beggining'] || !cmd['end'] || !cmd['file']) {
+      console.error('all parameters are required except content')
+      return;
+    }
+    console.log(
+      rchunk(cmd['beggining'], cmd['end'], cmd['content'], cmd['file'])
+    );
+  });
+
+program.parse(process.argv);

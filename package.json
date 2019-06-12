@@ -1,6 +1,6 @@
 {
   "name": "rchunk",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "main": "rchunk.js",
   "bin": "rchunk.js",
@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "commander": "^2.20.0"
+  }
 }
