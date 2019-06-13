@@ -40,4 +40,6 @@ program
     );
   });
 
+program.version('0.0.4', '-v, --version');
+
 program.parse(process.argv);
