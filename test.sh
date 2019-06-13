@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-echo -e "testing" | rchunk -b '// ACCOUNT' -e '// ACCOUNT' -f ./tmp
+cat feed | rchunk -b '// ACCOUNT' -e '// ACCOUNT' -f ./tmp

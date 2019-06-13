@@ -11,10 +11,10 @@ function rchunk(beg, end, rcontent, file) {
       regex = 
         new RegExp(`(${beg}[^${nlr}]+(${nlr})).*(${end}[^${nlr}]+(${nlr}))`);
 
-  return result = fs.readFileSync(file, 'utf8')
-          .replace(/\n/g, nlr)
-          .replace(regex, `${rcontent}`)
-          .replace(/#@/g, "\n").trim();
+  return fs.readFileSync(file, 'utf8')
+           .replace(/\n/g, nlr)
+           .replace(regex, `${rcontent}`)
+           .replace(/#@/g, "\n").trim();
 }
 
 program
