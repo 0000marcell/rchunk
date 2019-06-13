@@ -10,10 +10,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "commander": "^2.20.0"
-  },
   "dependencies": {
-    "readstdin": "^1.0.1"
+    "readstdin": "^1.0.1",
+    "commander": "^2.20.0"
   }
 }
